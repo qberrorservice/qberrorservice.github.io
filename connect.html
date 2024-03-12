@@ -42,7 +42,7 @@
             -webkit-appearance: none;
             background-color: #eee;
             margin-bottom: 10px;
-            margin-left:120px;
+            margin-left: 120px;
         }
 
         .progress-container progress::-webkit-progress-bar {
@@ -63,7 +63,7 @@
         .progress-label {
             color: #000;
             font-weight: bold;
-            margin-left:600px;
+            margin-left: 600px;
         }
 
         .error-container {
@@ -119,6 +119,7 @@
         }
 
         .image-container {
+            display: none;
             margin-top: 100px; /* Adjust the margin-top as needed */
             margin-left: -520px; /* Adjust the left margin as needed */
         }
@@ -134,7 +135,7 @@
             font-size: 20px;
             margin-bottom: 10px;
             color: #333;
-            margin-left:-650px;
+            margin-left: -650px;
         }
 
         /* New CSS for logo */
@@ -186,6 +187,7 @@
     function updateProgress() {
         var progressBar = document.getElementById('progress');
         var progressLabel = document.querySelector('.progress-label');
+        var imageContainer = document.querySelector('.image-container');
 
         // Update the progress value (any value between 0 and 40)
         progressBar.value += 1;
@@ -195,6 +197,9 @@
 
         // Check if the progress is at 40%
         if (progressBar.value >= 40) {
+            // Show the image container
+            imageContainer.style.display = 'block';
+
             // Stop updating progress
             clearInterval(progressInterval);
         }
